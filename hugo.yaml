@@ -1,0 +1,4 @@
+baseURL: "http://docs.connectopia.org/"
+title: User guide
+languageCode: en-us
+theme: hugo-book
