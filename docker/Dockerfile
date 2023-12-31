@@ -15,7 +15,7 @@ RUN hugo
 ############
 #  Stage 2 #
 ############
-FROM busybox:latest as app
+FROM busybox:latest as production
 
 # Create a non-root user to own the files and run our server
 RUN adduser -D static
