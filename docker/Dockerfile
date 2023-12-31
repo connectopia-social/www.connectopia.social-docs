@@ -8,7 +8,7 @@ RUN apk add hugo git
 # Set destination for COPY
 WORKDIR /app
 COPY . .
-# RUN git submodule add -f https://github.com/alex-shpak/hugo-book themes/hugo-book
+RUN git submodule add -f https://github.com/alex-shpak/hugo-book themes/hugo-book
 
 RUN hugo
 
