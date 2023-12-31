@@ -1,4 +1,19 @@
 baseURL: "http://docs.connectopia.org/"
 title: User guide
-languageCode: en-us
+# languageCode: en-us
 theme: hugo-book
+defaultContentLanguage: ru
+
+# module:
+#   imports:
+#     - path: github.com/alex-shpak/hugo-book
+
+languages:
+  ru:
+    languageName: Russian
+    contentDir: content.ru
+    weight: 1
+  en:
+    languageName: English
+    contentDir: content.en
+    weight: 2

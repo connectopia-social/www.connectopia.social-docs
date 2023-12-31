@@ -6,4 +6,4 @@ draft: false
 
 ## Design
 
-current design built on top K82 and C++
+current design built on top K8ы and C++

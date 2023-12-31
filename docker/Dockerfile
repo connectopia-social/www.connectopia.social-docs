@@ -1,14 +1,21 @@
-FROM ubuntu as builder
+############
+#  Stage 1 #
+############
+FROM alpine as builder
+
+RUN apk add hugo git
 
 # Set destination for COPY
 WORKDIR /app
-
-ADD https://github.com/gohugoio/hugo/releases/download/v0.115.1/hugo_extended_0.115.1_linux-amd64.tar.gz hugo.tar.gz
-RUN tar -zxf hugo.tar.gz
 COPY . .
-RUN ./hugo
+RUN git submodule add -f https://github.com/alex-shpak/hugo-book themes/hugo-book
 
-FROM busybox:latest
+RUN hugo
+
+############
+#  Stage 2 #
+############
+FROM busybox:latest as app
 
 # Create a non-root user to own the files and run our server
 RUN adduser -D static
